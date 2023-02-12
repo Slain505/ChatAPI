@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5ty3TZS0Yio9YTygvOrDJYGh+maRL3GzttZg2ky5mf7QRjunqDLl1WbufZm+jhRui8GQ6eAQ/4jo3lOGbw/wFw==",
+  "dgSpecHash": "f4u0lvjgdUQOYk5omYxBN2bua8ZzW0o01Fd4TDpEGp4CPoMipLgkUspNmcQ3Epv4SlDXkImy9qHRNpNKpb78cQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\qwert\\Documents\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qwert\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+  ],
   "logs": []
 }

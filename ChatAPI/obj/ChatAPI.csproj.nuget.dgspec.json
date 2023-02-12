@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\qwert\\Documents\\ChatAPI\\ChatAPI\\ChatAPI.csproj": {}
+    "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\qwert\\Documents\\ChatAPI\\ChatAPI\\ChatAPI.csproj": {
+    "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\qwert\\Documents\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
+        "projectUniqueName": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
         "projectName": "ChatAPI",
-        "projectPath": "C:\\Users\\qwert\\Documents\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
+        "projectPath": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
         "packagesPath": "C:\\Users\\qwert\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\qwert\\Documents\\ChatAPI\\ChatAPI\\obj\\",
+        "outputPath": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\qwert\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,10 +45,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -57,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
