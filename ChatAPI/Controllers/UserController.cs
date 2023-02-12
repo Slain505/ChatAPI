@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ChatAPI.Controllers
 {
     [ApiController]
-    [Route("api/users/[controller]")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly UserList _userList;
@@ -25,7 +25,7 @@ namespace ChatAPI.Controllers
 
             return Ok(user);
         }
-
+        //Update instead of Set
         [HttpPost]
         public IActionResult Set(IUsers user)
         {
@@ -40,4 +40,4 @@ namespace ChatAPI.Controllers
             return Ok();
         }
     }
-}
+}   

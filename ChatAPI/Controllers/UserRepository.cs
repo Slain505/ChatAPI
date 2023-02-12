@@ -9,7 +9,7 @@ namespace ChatAPI
       public string LastName { get; set; }
       public string Email { get; set; }
    }
-
+   //Use UserRepository instead of UserList
    public class UserList
    {
       private static UserList _instance;
@@ -39,12 +39,12 @@ namespace ChatAPI
             return _instance;
          }
       }
-
+      //Add GetUserList(all users in the list)
       public IUsers GetUser(int id)
       {
          return _users.Find(u => u.Id == id);
       }
-
+      //UpdateUser
       public void SetUser(IUsers user)
       {
          var existingUser = _users.Find(u => u.Id == user.Id);
@@ -54,7 +54,7 @@ namespace ChatAPI
             existingUser.FirstName = user.FirstName;
             existingUser.Email = user.Email;
          }
-         else
+         else //Delete this statement (Only PUT left) 
          {
             _users.Add(user);
          }
