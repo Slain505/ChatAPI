@@ -10,18 +10,18 @@ namespace ChatAPI
       public string Email { get; set; }
    }
    //Use UserRepository instead of UserList
-   public class UserList
+   public class UserRepository
    {
-      private static UserList _instance;
+      private static UserRepository _instance;
       private static readonly object _lock = new object();
       private List<IUsers> _users = new List<IUsers>();
 
-      private UserList()
+      private UserRepository()
       {
          _users = new List<IUsers>();
       }
 
-      private static UserList Instance
+      private static UserRepository Instance
       {
          get
          {
