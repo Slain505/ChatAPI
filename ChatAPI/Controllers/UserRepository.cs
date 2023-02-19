@@ -2,26 +2,26 @@ using System.Collections.Generic;
 
 namespace ChatAPI
 {
-   public class User : IUsers
+   public class User
    {
       public int Id { get; set; }
       public string FirstName { get; set; }
       public string LastName { get; set; }
       public string Email { get; set; }
    }
-   //Use UserRepository instead of UserList
-   public class UserRepository
-   {
-      private static UserRepository _instance;
-      private static readonly object _lock = new object();
-      private List<IUsers> _users = new List<IUsers>();
 
-      private UserRepository()
+   public class UserRepository : IUserRepository
+   {
+      /*private static UserRepository _instance;
+      private static readonly object _lock = new object();*/
+      private List<User> _users = new List<User>();
+
+      public UserRepository()
       {
-         _users = new List<IUsers>();
+         _users = new List<User>();
       }
 
-      private static UserRepository Instance
+      /*private static UserRepository Instance
       {
          get
          {
@@ -31,21 +31,26 @@ namespace ChatAPI
                {
                   if (_instance == null)
                   {
-                     _instance = new UserList();
+                     _instance = new UserRepository();
                   }
                }
             }
 
             return _instance;
          }
-      }
-      //Add GetUserList(all users in the list)
-      public IUsers GetUser(int id)
+      }*/
+
+      public User GetUser(int id)
       {
          return _users.Find(u => u.Id == id);
       }
-      //UpdateUser
-      public void SetUser(IUsers user)
+
+      public IEnumerable<User> GetUserList()
+      {
+         return _users;
+      }
+
+      public void UpdateUser(User user)
       {
          var existingUser = _users.Find(u => u.Id == user.Id);
          if (existingUser != null)
@@ -54,13 +59,9 @@ namespace ChatAPI
             existingUser.FirstName = user.FirstName;
             existingUser.Email = user.Email;
          }
-         else //Delete this statement (Only PUT left) 
-         {
-            _users.Add(user);
-         }
       }
 
-      public void PutUser(IUsers user)
+      public void PutUser(User user)
       {
          _users.Add(user);
       }

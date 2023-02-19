@@ -7,14 +7,14 @@ namespace ChatAPI.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly UserList _userList;
+        private readonly IUserRepository _userList;
 
-        public UserController(UserList userList)
+        public UserController(IUserRepository userList)
         {
             _userList = userList;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var user = _userList.GetUser(id);
@@ -25,16 +25,23 @@ namespace ChatAPI.Controllers
 
             return Ok(user);
         }
-        //Update instead of Set
-        [HttpPost]
-        public IActionResult Set(IUsers user)
+
+        [HttpGet]
+        public IActionResult Get()
         {
-            _userList.SetUser(user);
+            var users = _userList.GetUserList();
+            return Ok(users);
+        }
+
+        [HttpPost]
+        public IActionResult Update(User user)
+        {
+            _userList.UpdateUser(user);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult Put(IUsers user)
+        public IActionResult Put(User user)
         {
             _userList.PutUser(user);
             return Ok();

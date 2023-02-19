@@ -20,17 +20,14 @@ namespace ChatAPI
             Configuration = configuration;
         }
         
-        //Add DI Singleton for UserList etc.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddSingleton<IUserList, UserList>();
-        }
+        
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IUserRepository, UserRepository>();
             services.AddControllers();
         }
 
