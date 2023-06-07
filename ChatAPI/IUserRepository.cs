@@ -6,9 +6,8 @@ namespace ChatAPI
     {
         void PutUser(User user);
         void UpdateUser(User user);
+        void DeleteUser(User user);
         User GetUser(int id);
         IEnumerable<User> GetUserList();
-
-
     }
 }

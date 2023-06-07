@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "f4u0lvjgdUQOYk5omYxBN2bua8ZzW0o01Fd4TDpEGp4CPoMipLgkUspNmcQ3Epv4SlDXkImy9qHRNpNKpb78cQ==",
+  "dgSpecHash": "T7kLrau+0wazCWxCUBLZOq0klQJjRTR0fCR8eR0iyMagDuxSCNV/uJo8RD4X9MOHHnMHHIxgghkh0y2WtOijnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
+  "projectFilePath": "/Users/vladyslavyefimenko/ChatAPI/ChatAPI/ChatAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\qwert\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+    "/Users/vladyslavyefimenko/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "/Users/vladyslavyefimenko/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/vladyslavyefimenko/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.32/microsoft.netcore.app.host.osx-x64.3.1.32.nupkg.sha512"
   ],
   "logs": []
 }

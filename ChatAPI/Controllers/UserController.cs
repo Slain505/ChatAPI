@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 
@@ -44,6 +45,25 @@ namespace ChatAPI.Controllers
         public IActionResult Put(User user)
         {
             _userList.PutUser(user);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var user = _userList.GetUser(id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+                _userList.DeleteUser(user);
+            }
+            catch(Exception)
+            {
+                return BadRequest();
+            }
             return Ok();
         }
     }

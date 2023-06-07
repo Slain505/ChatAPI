@@ -65,5 +65,10 @@ namespace ChatAPI
       {
          _users.Add(user);
       }
+
+      public void DeleteUser(User user)
+      {
+         _users.Remove(user);
+      }
    }
 }   

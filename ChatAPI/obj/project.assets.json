@@ -8,26 +8,24 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\qwert\\.nuget\\packages\\": {}
+    "/Users/vladyslavyefimenko/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
+      "projectUniqueName": "/Users/vladyslavyefimenko/ChatAPI/ChatAPI/ChatAPI.csproj",
       "projectName": "ChatAPI",
-      "projectPath": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\ChatAPI.csproj",
-      "packagesPath": "C:\\Users\\qwert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\qwert\\ChatAPI\\ChatAPI\\obj\\",
+      "projectPath": "/Users/vladyslavyefimenko/ChatAPI/ChatAPI/ChatAPI.csproj",
+      "packagesPath": "/Users/vladyslavyefimenko/.nuget/packages/",
+      "outputPath": "/Users/vladyslavyefimenko/ChatAPI/ChatAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\qwert\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/vladyslavyefimenko/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,8 +56,16 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
             "version": "[3.1.32, 3.1.32]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
           }
         ],
         "frameworkReferences": {
@@ -70,7 +76,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/vladyslavyefimenko/.dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }
