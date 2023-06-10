@@ -4,10 +4,10 @@ namespace ChatAPI
 {
     public interface IUserRepository 
     {
-        void PutUser(User user);
-        void UpdateUser(User user);
-        void DeleteUser(User user);
-        User GetUser(int id);
-        IEnumerable<User> GetUserList();
+        void PutUser(UserModel userModel);
+        void UpdateUser(UserModel userModel);
+        void DeleteUser(UserModel userModel);
+        UserModel GetUser(int id);
+        IEnumerable<UserModel> GetUserList();
     }
 }

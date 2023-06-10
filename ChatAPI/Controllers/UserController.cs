@@ -35,21 +35,21 @@ namespace ChatAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(User user)
+        public IActionResult Update(UserModel userModel)
         {
-            _userList.UpdateUser(user);
+            _userList.UpdateUser(userModel);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult Put(User user)
+        public IActionResult Put(UserModel userModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             
-            _userList.PutUser(user);
+            _userList.PutUser(userModel);
             return Ok();
         }
 

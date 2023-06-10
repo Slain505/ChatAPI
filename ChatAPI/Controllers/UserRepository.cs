@@ -4,64 +4,43 @@ namespace ChatAPI
 {
    public class UserRepository : IUserRepository
    {
-      /*private static UserRepository _instance;
-      private static readonly object _lock = new object();*/
-      private List<User> _users = new List<User>();
+      private List<UserModel> _users = new List<UserModel>();
 
       public UserRepository()
       {
-         _users = new List<User>();
+         _users = new List<UserModel>();
       }
-
-      /*private static UserRepository Instance
-      {
-         get
-         {
-            if (_instance == null)
-            {
-               lock (_lock)
-               {
-                  if (_instance == null)
-                  {
-                     _instance = new UserRepository();
-                  }
-               }
-            }
-
-            return _instance;
-         }
-      }*/
-
-      public User GetUser(int id)
+      
+      public UserModel GetUser(int id)
       {
          return _users.Find(u => u.Id == id);
       }
 
-      public IEnumerable<User> GetUserList()
+      public IEnumerable<UserModel> GetUserList()
       {
          return _users;
       }
 
-      public void UpdateUser(User user)
+      public void UpdateUser(UserModel userModel)
       {
-         var existingUser = _users.Find(u => u.Id == user.Id);
+         var existingUser = _users.Find(u => u.Id == userModel.Id);
          if (existingUser != null)
          {
-            existingUser.LastName = user.LastName;
-            existingUser.FirstName = user.FirstName;
-            existingUser.Email = user.Email;
-            existingUser.Password = user.Password;
+            existingUser.LastName = userModel.LastName;
+            existingUser.FirstName = userModel.FirstName;
+            existingUser.Email = userModel.Email;
+            existingUser.Password = userModel.Password;
          }
       }
 
-      public void PutUser(User user)
+      public void PutUser(UserModel userModel)
       {
-         _users.Add(user);
+         _users.Add(userModel);
       }
 
-      public void DeleteUser(User user)
+      public void DeleteUser(UserModel userModel)
       {
-         _users.Remove(user);
+         _users.Remove(userModel);
       }
    }
 }   

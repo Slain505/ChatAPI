@@ -1,7 +1,7 @@
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;using Microsoft.AspNetCore.Authentication.OAuth.Claims;
+using System.ComponentModel.DataAnnotations;
 
-public class User
+public class UserModel
 {
     public int Id { get; set; }
 
@@ -20,6 +20,5 @@ public class User
     
     [Required]
     [PasswordPropertyText]
-    [Compare("Password", ErrorMessage = "Incorrect password")]
-    public string Password { get; set; }
+    protected internal string Password { get; set; }
 }
