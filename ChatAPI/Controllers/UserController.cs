@@ -44,6 +44,11 @@ namespace ChatAPI.Controllers
         [HttpPut]
         public IActionResult Put(User user)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             _userList.PutUser(user);
             return Ok();
         }

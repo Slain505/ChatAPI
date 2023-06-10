@@ -2,14 +2,6 @@ using System.Collections.Generic;
 
 namespace ChatAPI
 {
-   public class User
-   {
-      public int Id { get; set; }
-      public string FirstName { get; set; }
-      public string LastName { get; set; }
-      public string Email { get; set; }
-   }
-
    public class UserRepository : IUserRepository
    {
       /*private static UserRepository _instance;
@@ -58,6 +50,7 @@ namespace ChatAPI
             existingUser.LastName = user.LastName;
             existingUser.FirstName = user.FirstName;
             existingUser.Email = user.Email;
+            existingUser.Password = user.Password;
          }
       }
 
