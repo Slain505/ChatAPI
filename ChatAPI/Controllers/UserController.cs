@@ -1,4 +1,5 @@
 using System;
+using ChatAPI.Infrastructure.Users;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,14 +36,14 @@ namespace ChatAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(UserModel userModel)
+        public IActionResult Update(UserEntity userModel)
         {
             _userList.UpdateUser(userModel);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult Put(UserModel userModel)
+        public IActionResult Put(UserEntity userModel)
         {
             if (!ModelState.IsValid)
             {
