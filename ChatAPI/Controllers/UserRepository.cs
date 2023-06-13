@@ -30,7 +30,7 @@ namespace ChatAPI
             existingUser.LastName = userModel.LastName;
             existingUser.FirstName = userModel.FirstName;
             existingUser.Email = userModel.Email;
-            existingUser.Password = userModel.Password;
+            existingUser.PasswordHash = userModel.PasswordHash;
          }
       }
 

@@ -1,5 +1,7 @@
 using System;
 using ChatAPI.Infrastructure.Users;
+using ChatAPI.Models;
+using ChatAPI.Utils;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,32 +27,66 @@ namespace ChatAPI.Controllers
                 return NotFound();
             }
 
-            return Ok(user);
+            var userResponse = new UserResponseModel()
+            {
+                Email = user.Email,
+                FirstName = user.FirstName,
+                Id = user.Id,
+                LastName = user.LastName
+            };
+
+            return Ok(userResponse);
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(UserRequestModel userRequestModel)
         {
+            //rework to UserEntity model use
             var users = _userList.GetUserList();
+            
+            /*var userResponse = users
+            {
+                Email = users.Email,
+                FirstName = users.FirstName,
+                Id = users.Id,
+                LastName = users.LastName
+            };*/
+            
             return Ok(users);
         }
 
         [HttpPost]
-        public IActionResult Update(UserEntity userModel)
+        public IActionResult Update(UserRequestModel userRequestModel)
         {
-            _userList.UpdateUser(userModel);
+            var userEntity = _userList.GetUser(userRequestModel.Id);
+            userEntity.Email = userRequestModel.Email;
+            userEntity.FirstName = userRequestModel.FirstName;
+            userEntity.Id = userRequestModel.Id;
+            userEntity.LastName = userRequestModel.LastName;
+            userEntity.PasswordHash = userRequestModel.Password.ComputeSha256Hash(); 
+            
+            _userList.UpdateUser(userEntity);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult Put(UserEntity userModel)
+        public IActionResult Put(UserRequestModel userRequestModel)
         {
+            var userEntity = new UserEntity()
+            {
+                Email = userRequestModel.Email,
+                FirstName = userRequestModel.FirstName,
+                Id = userRequestModel.Id,
+                LastName = userRequestModel.LastName,
+                PasswordHash = userRequestModel.Password.ComputeSha256Hash()
+            };
+            
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             
-            _userList.PutUser(userModel);
+            _userList.PutUser(userEntity);
             return Ok();
         }
 

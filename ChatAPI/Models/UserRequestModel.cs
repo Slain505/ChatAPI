@@ -1,8 +1,11 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-public class UserModel
+public class UserRequestModel
 {
+    /// <summary>
+    /// Template of user information which client send to server
+    /// </summary>
     public int Id { get; set; }
 
     [Required]
@@ -20,5 +23,5 @@ public class UserModel
     
     [Required]
     [PasswordPropertyText]
-    protected internal string Password { get; set; }
+    public string Password { get; set; }
 }
