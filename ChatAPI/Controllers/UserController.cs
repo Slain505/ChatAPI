@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using ChatAPI.Infrastructure.Users;
 using ChatAPI.Models;
 using ChatAPI.Utils;
@@ -43,16 +44,16 @@ namespace ChatAPI.Controllers
         {
             //rework to UserEntity model use
             var users = _userList.GetUserList();
-            
-            /*var userResponse = users
+
+            var userResponse = users.Select(user => new UserEntity()
             {
-                Email = users.Email,
-                FirstName = users.FirstName,
-                Id = users.Id,
-                LastName = users.LastName
-            };*/
+                Email = user.Email,
+                FirstName = user.FirstName,
+                Id = user.Id,
+                LastName = user.LastName
+            }).ToArray();
             
-            return Ok(users);
+            return Ok(users.ToArray());
         }
 
         [HttpPost]
