@@ -43,5 +43,10 @@ namespace ChatAPI
       {
          _users.Remove(userModel);
       }
+
+      public void DeleteAllUsers(UserEntity userModel)
+      {
+         _users.Clear();
+      }
    }
 }   

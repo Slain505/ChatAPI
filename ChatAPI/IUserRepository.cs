@@ -8,6 +8,7 @@ namespace ChatAPI
         void PutUser(UserEntity userModel);
         void UpdateUser(UserEntity userModel);
         void DeleteUser(UserEntity userModel);
+        void DeleteAllUsers(UserEntity userModel);
         UserEntity GetUser(int id);
         IEnumerable<UserEntity> GetUserList();
     }

@@ -69,3 +69,9 @@ C:/Users/qwert/ChatAPI/ChatAPI/obj/Debug/netcoreapp3.1/ChatAPI.genruntimeconfig.
 /Users/vladyslavyefimenko/ChatAPI/ChatAPI/obj/Debug/netcoreapp3.1/ChatAPI.dll
 /Users/vladyslavyefimenko/ChatAPI/ChatAPI/obj/Debug/netcoreapp3.1/ChatAPI.pdb
 /Users/vladyslavyefimenko/ChatAPI/ChatAPI/obj/Debug/netcoreapp3.1/ChatAPI.genruntimeconfig.cache
+/Users/vladyslavyefimenko/ChatAPI/ChatAPI/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll
+/Users/vladyslavyefimenko/ChatAPI/ChatAPI/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
+/Users/vladyslavyefimenko/ChatAPI/ChatAPI/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/vladyslavyefimenko/ChatAPI/ChatAPI/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/vladyslavyefimenko/ChatAPI/ChatAPI/obj/Debug/netcoreapp3.1/ChatAPI.MvcApplicationPartsAssemblyInfo.cs
+/Users/vladyslavyefimenko/ChatAPI/ChatAPI/obj/Debug/netcoreapp3.1/ChatAPI.csproj.CopyComplete

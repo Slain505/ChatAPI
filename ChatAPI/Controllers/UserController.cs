@@ -42,7 +42,6 @@ namespace ChatAPI.Controllers
         [HttpGet]
         public IActionResult Get(UserRequestModel userRequestModel)
         {
-            //rework to UserEntity model use
             var users = _userList.GetUserList();
 
             var userResponse = users.Select(user => new UserEntity()
@@ -107,6 +106,27 @@ namespace ChatAPI.Controllers
             {
                 return BadRequest();
             }
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteAll(UserRequestModel userRequestModel)
+        {
+            try
+            {
+                var users = _userList.GetUserList();
+                if (users == null)
+                {
+                    return NotFound();
+                }
+
+                _userList.DeleteAllUsers(new UserEntity());
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
             return Ok();
         }
     }
