@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using ChatAPI.Infrastructure.Users;
 using ChatAPI.Models;
@@ -43,16 +44,32 @@ namespace ChatAPI.Controllers
         public IActionResult Get(UserRequestModel userRequestModel)
         {
             var users = _userList.GetUserList();
-
-            var userResponse = users.Select(user => new UserEntity()
+            var userResponseList = new List<UserResponseModel>();
+            // Using foreach instead of LINQ methods
+            foreach(var user in users)
+            {
+                {
+                    var userResponse = new UserResponseModel()
+                    {
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        Id = user.Id,
+                        LastName = user.LastName
+                    };
+                    userResponseList.Add(userResponse);
+                }
+            }
+            
+            /* Example with LINQ
+             var userResponse = users.Select(user => new UserEntity()
             {
                 Email = user.Email,
                 FirstName = user.FirstName,
                 Id = user.Id,
                 LastName = user.LastName
-            }).ToArray();
+            }).ToArray();*/
             
-            return Ok(users.ToArray());
+            return Ok(userResponseList);
         }
 
         [HttpPost]
