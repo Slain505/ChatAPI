@@ -48,16 +48,14 @@ namespace ChatAPI.Controllers
             // Using foreach instead of LINQ methods
             foreach(var user in users)
             {
-                {
-                    var userResponse = new UserResponseModel()
-                    {
-                        Email = user.Email,
-                        FirstName = user.FirstName,
-                        Id = user.Id,
-                        LastName = user.LastName
-                    };
-                    userResponseList.Add(userResponse);
-                }
+                var userResponse = new UserResponseModel()
+                { 
+                    Email = user.Email, 
+                    FirstName = user.FirstName, 
+                    Id = user.Id, 
+                    LastName = user.LastName
+                }; 
+                userResponseList.Add(userResponse);
             }
             
             /* Example with LINQ

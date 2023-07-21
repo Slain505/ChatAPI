@@ -23,11 +23,7 @@ namespace ChatAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Title = "Chat API",
-                    Version = "v1"
-                });
+                c.SwaggerDoc("v1", new OpenApiInfo());
             });
         }
 
@@ -53,7 +49,7 @@ namespace ChatAPI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/ChatAPI.json", "ChatAPI");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ChatAPI v1");
             });
         }
     }
