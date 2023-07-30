@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ChatAPI.Filters;
 using ChatAPI.Infrastructure.Users;
 using ChatAPI.Models;
 using ChatAPI.Utils;
@@ -34,14 +35,16 @@ namespace ChatAPI.Controllers
                 Email = user.Email,
                 FirstName = user.FirstName,
                 Id = user.Id,
-                LastName = user.LastName
+                LastName = user.LastName,
+                Username = user.Username,
             };
 
             return Ok(userResponse);
         }
 
         [HttpGet]
-        public IActionResult Get(UserRequestModel userRequestModel)
+        [AuthorizationFilter]
+        public IActionResult Get()
         {
             var users = _userList.GetUserList();
             var userResponseList = new List<UserResponseModel>();
@@ -53,7 +56,8 @@ namespace ChatAPI.Controllers
                     Email = user.Email, 
                     FirstName = user.FirstName, 
                     Id = user.Id, 
-                    LastName = user.LastName
+                    LastName = user.LastName,
+                    Username = user.Username,
                 }; 
                 userResponseList.Add(userResponse);
             }
@@ -78,7 +82,8 @@ namespace ChatAPI.Controllers
             userEntity.FirstName = userRequestModel.FirstName;
             userEntity.Id = userRequestModel.Id;
             userEntity.LastName = userRequestModel.LastName;
-            userEntity.PasswordHash = userRequestModel.Password.ComputeSha256Hash(); 
+            userEntity.PasswordHash = userRequestModel.Password.ComputeSha256Hash();
+            userEntity.Username = userRequestModel.Username;
             
             _userList.UpdateUser(userEntity);
             return Ok();
@@ -93,7 +98,8 @@ namespace ChatAPI.Controllers
                 FirstName = userRequestModel.FirstName,
                 Id = userRequestModel.Id,
                 LastName = userRequestModel.LastName,
-                PasswordHash = userRequestModel.Password.ComputeSha256Hash()
+                PasswordHash = userRequestModel.Password.ComputeSha256Hash(),
+                Username = userRequestModel.Username,
             };
             
             if (!ModelState.IsValid)

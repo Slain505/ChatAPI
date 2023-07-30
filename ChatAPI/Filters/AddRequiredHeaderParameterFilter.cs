@@ -1,6 +1,6 @@
 namespace ChatAPI.Filters
 {
-    public class AuthFilter
+    public class AddRequiredHeaderParameterFilter
     {
         
     }

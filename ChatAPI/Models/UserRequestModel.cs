@@ -20,6 +20,10 @@ public class UserRequestModel
     [StringLength(50, MinimumLength = 5, ErrorMessage = "Email should contain from 2-20 characters")]
     [EmailAddress(ErrorMessage = "Wrong email format used, try another one")]
     public string Email { get; set; }
+
+    [Required]
+    [StringLength(20, MinimumLength = 2, ErrorMessage = "Username should contain from 2-20 characters")]
+    public string Username { get; set; }
     
     [Required]
     [PasswordPropertyText]

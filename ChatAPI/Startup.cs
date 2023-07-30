@@ -1,3 +1,4 @@
+using ChatAPI.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace ChatAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
+                c.OperationFilter<AddRequiredHeadersParameterFilter>();
                 c.SwaggerDoc("v1", new OpenApiInfo());
             });
         }
