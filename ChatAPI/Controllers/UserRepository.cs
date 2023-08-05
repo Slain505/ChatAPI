@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using ChatAPI.Infrastructure.Users;
+using ChatAPI.Services;
 
 namespace ChatAPI
 {
    public class UserRepository : IUserRepository
    {
       private List<UserEntity> _users = new List<UserEntity>();
+      private IdGenerator idGenerator;
 
       public UserRepository()
       {
@@ -35,9 +37,19 @@ namespace ChatAPI
          }
       }
 
-      public void PutUser(UserEntity userModel)
+      public void PutUser(UserAddModel userAddModel)
       {
-         _users.Add(userModel);
+         userAddModel.Id = idGenerator.GetNextId();
+         var userEntity = new UserEntity()
+         {
+            Id = userAddModel.Id,
+            LastName = userAddModel.LastName,
+            FirstName = userAddModel.FirstName,
+            Email = userAddModel.Email,
+            PasswordHash = userAddModel.PasswordHash,
+            Username = userAddModel.Username
+         };
+         _users.Add(userEntity);
       }
 
       public void DeleteUser(UserEntity userModel)
@@ -48,6 +60,11 @@ namespace ChatAPI
       public void DeleteAllUsers(UserEntity userModel)
       {
          _users.Clear();
+      }
+
+      public UserRepository(IdGenerator idGenerator)
+      {
+         this.idGenerator = idGenerator;
       }
    }
 }   

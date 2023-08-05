@@ -80,7 +80,6 @@ namespace ChatAPI.Controllers
             var userEntity = _userList.GetUser(userRequestModel.Id);
             userEntity.Email = userRequestModel.Email;
             userEntity.FirstName = userRequestModel.FirstName;
-            userEntity.Id = userRequestModel.Id;
             userEntity.LastName = userRequestModel.LastName;
             userEntity.PasswordHash = userRequestModel.Password.ComputeSha256Hash();
             userEntity.Username = userRequestModel.Username;
@@ -90,16 +89,15 @@ namespace ChatAPI.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put(UserRequestModel userRequestModel)
+        public IActionResult Put(UserAddModel userAddModel)
         {
-            var userEntity = new UserEntity()
+            var userEntity = new UserAddModel()
             {
-                Email = userRequestModel.Email,
-                FirstName = userRequestModel.FirstName,
-                Id = userRequestModel.Id,
-                LastName = userRequestModel.LastName,
-                PasswordHash = userRequestModel.Password.ComputeSha256Hash(),
-                Username = userRequestModel.Username,
+                Email = userAddModel.Email,
+                FirstName = userAddModel.FirstName,
+                LastName = userAddModel.LastName,
+                PasswordHash = userAddModel.Password.ComputeSha256Hash(),
+                Username = userAddModel.Username,
             };
             
             if (!ModelState.IsValid)

@@ -5,7 +5,7 @@ namespace ChatAPI
 {
     public interface IUserRepository 
     {
-        void PutUser(UserEntity userModel);
+        void PutUser(UserAddModel userAddModel);
         void UpdateUser(UserEntity userModel);
         void DeleteUser(UserEntity userModel);
         void DeleteAllUsers(UserEntity userModel);
